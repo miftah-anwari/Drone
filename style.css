@@ -1,5 +1,3 @@
-
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -134,7 +132,6 @@ a {
     justify-content: space-between;
     gap: 24px;
     animation: slideFadeDown 0.9s ease-out forwards;
-    background-color: black;
 }
 
 .logo {
@@ -340,7 +337,6 @@ a {
 
 .mapping-section {
     padding: 100px 0;
-    background: #000;
     color: #fff;
     animation: slideFadeDown 0.9s ease-out forwards;
 }
@@ -386,99 +382,6 @@ a {
     grid-template-columns: 1.2fr 1fr;
     gap: 50px;
     align-items: center;
-}
-
-.mapping-image {
-    width: 100%;
-    height: 500px;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #111;
-    border: 1px solid #292929;
-}
-
-.mapping-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.mapping-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.mapping-card {
-    display: flex;
-    gap: 20px;
-    padding: 25px;
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 15px;
-    transition: 0.3s ease;
-}
-
-.mapping-card:hover {
-    transform: translateY(-5px);
-    border-color: #555;
-    background: #151515;
-}
-
-.mapping-number {
-    font-size: 14px;
-    color: #777;
-    min-width: 30px;
-}
-
-.mapping-card h3 {
-    margin: 0 0 10px;
-    font-size: 20px;
-}
-
-.mapping-card p {
-    margin: 0;
-    color: #999;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .mapping-section {
-        padding: 70px 0;
-    }
-
-    .mapping-header {
-        margin-bottom: 40px;
-    }
-
-    .mapping-header h2 {
-        font-size: 36px;
-    }
-
-    .mapping-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .mapping-image {
-        height: 350px;
-    }
-
-    .mapping-card {
-        padding: 20px;
-    }
-}
-
-@keyframes droneFloat {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -15px;
-    }
 }
 
 .shadow-drone {
@@ -560,7 +463,6 @@ a {
 .about-mapping {
     width: 100%;
     padding: 120px 8%;
-    background: #050505;
     color: white;
     animation: slideFadeDown 0.9s ease-out forwards;
 }
@@ -639,7 +541,6 @@ a {
 .contact-section {
     width: 100%;
     padding: 120px 8%;
-    background: #050505;
     color: #fff;
     animation: slideFadeDown 0.9s ease-out forwards;
 }
@@ -1056,6 +957,94 @@ a {
     }
 }
 
+@media (max-width: 769px) {
+
+    .about-mapping {
+        width: 100%;
+        padding: 70px 20px;
+        background: #050505;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .about-mapping-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+        box-sizing: border-box;
+    }
+
+    .about-mapping-image {
+        width: 100%;
+        height: 330px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .about-mapping-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .about-mapping-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .about-mapping-content h2 {
+        width: 100%;
+        margin: 15px 0 20px;
+        font-size: 38px;
+        line-height: 1.05;
+        word-wrap: break-word;
+    }
+
+    .about-mapping-content > p {
+        width: 100%;
+        margin-bottom: 18px;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #999;
+    }
+
+    .mapping-features {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .mapping-feature {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 14px;
+    }
+
+    .mapping-feature h3 {
+        margin-bottom: 8px;
+        font-size: 22px;
+    }
+
+    .mapping-feature p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
 @media (max-width: 425px) {
 
     .about-mapping {
@@ -1183,5 +1172,201 @@ a {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.mapping-section {
+    padding: 100px 0;
+    color: #fff;
+    animation: slideFadeDown 0.9s ease-out forwards;
+}
+
+.mapping-section .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.mapping-header {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.mapping-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #aaa;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.mapping-header h2 {
+    margin: 0 0 20px;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.mapping-header h2 span {
+    color: #888;
+}
+
+.mapping-header p {
+    margin: 0;
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.mapping-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.mapping-image {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    background: #111;
+}
+
+.mapping-image video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #000;
+}
+
+.mapping-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.mapping-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    min-width: 0;
+    padding: 25px;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.mapping-card:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+    background: #151515;
+}
+
+
+.mapping-number {
+    flex-shrink: 0;
+    min-width: 30px;
+    color: #777;
+    font-size: 14px;
+}
+
+
+.mapping-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.mapping-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.mapping-card p {
+    margin: 0;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 768px) {
+
+    .mapping-section {
+        padding: 70px 0;
+    }
+
+    .mapping-section .container {
+        width: 90%;
+    }
+
+    .mapping-header {
+        margin-bottom: 40px;
+    }
+
+    .mapping-header h2 {
+        font-size: 36px;
+    }
+
+    .mapping-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .mapping-image {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .mapping-image video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .mapping-info {
+        gap: 15px;
+    }
+
+    .mapping-card {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .mapping-card h3 {
+        font-size: 18px;
+    }
+
+    .mapping-card p {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 425px) {
+
+    .mapping-header h2 {
+        font-size: 32px;
+    }
+
+    .mapping-header p {
+        font-size: 14px;
+    }
+
+    .mapping-card {
+        padding: 18px;
+    }
+
+    .mapping-number {
+        min-width: 25px;
     }
 }
