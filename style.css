@@ -835,7 +835,6 @@ a {
         width: 100%;
         justify-content: space-between;
         gap: 10px;
-        padding-top: 12px;
     }
 
     .nav-links a {
@@ -962,7 +961,6 @@ a {
     .about-mapping {
         width: 100%;
         padding: 70px 20px;
-        background: #050505;
         box-sizing: border-box;
         overflow: hidden;
     }
@@ -1050,7 +1048,6 @@ a {
     .about-mapping {
         width: 100%;
         padding: 70px 20px;
-        background: #050505;
         box-sizing: border-box;
         overflow: hidden;
     }
