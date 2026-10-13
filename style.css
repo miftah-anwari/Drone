@@ -326,10 +326,8 @@ a {
     width: 100%;
     height: auto;
     object-fit: contain;
-
     user-select: none;
     -webkit-user-drag: none;
-
     filter:
         drop-shadow(0 25px 30px rgba(0, 0, 0, 0.45))
         drop-shadow(0 0 35px rgba(89, 166, 255, 0.12));
@@ -387,14 +385,11 @@ a {
 .shadow-drone {
     position: absolute;
     z-index: 1;
-
     width: 48%;
     height: 35px;
     bottom: 10%;
     left: 28%;
-
     border-radius: 50%;
-
     background: rgba(54, 135, 224, 0.19);
     filter: blur(35px);
 }
@@ -402,11 +397,9 @@ a {
 .hero-footer {
     position: absolute;
     z-index: 5;
-
     left: 5.7%;
     right: 5.7%;
     bottom: 35px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -421,43 +414,6 @@ a {
 .hero-footer > p span {
     margin: 0 8px;
     color: #72b9ff;
-}
-
-.mouse-hint {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    color: #dceaff;
-    font-size: 12px;
-}
-
-.mouse-icon {
-    position: relative;
-    width: 25px;
-    height: 39px;
-
-    border: 2px solid #7dbdff;
-    border-radius: 20px;
-}
-
-.mouse-icon span {
-    position: absolute;
-    top: 7px;
-    left: 50%;
-
-    width: 3px;
-    height: 8px;
-
-    border-radius: 5px;
-    background: white;
-
-    animation: mouseScroll 1.5s infinite;
 }
 
 .about-mapping {
@@ -1365,5 +1321,20 @@ a {
 
     .mapping-number {
         min-width: 25px;
+    }
+}
+
+.drone-float {
+    width: 100%;
+    animation: droneFloat 4s ease-in-out infinite;
+}
+
+@keyframes droneFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
     }
 }
