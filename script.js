@@ -118,17 +118,70 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// Ambil posisi cursor
-document.addEventListener("mousemove", (event) => {
-    mouse.x = event.clientX;
-    mouse.y = event.clientY;
-    cursorActive = true;
+
+ // Ambil posisi cursor dan sentuhan
+document.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "mouse") {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+        cursorActive = true;
+    } else if (
+        event.pointerType === "touch" &&
+        cursorActive
+    ) {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+    }
 });
 
-document.addEventListener("mouseleave", () => {
-    cursorActive = false;
-    particles = [];
+// Desktop: api hilang saat cursor keluar halaman
+document.addEventListener("mouseout", (event) => {
+    if (
+        event.pointerType === "mouse" &&
+        !event.relatedTarget
+    ) {
+        cursorActive = false;
+        particles = [];
+        mouse.x = -100;
+        mouse.y = -100;
+    }
 });
+
+// HP: api muncul ketika layar disentuh
+document.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch") {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+
+        smoothMouse.x = event.clientX;
+        smoothMouse.y = event.clientY;
+
+        lastParticleX = event.clientX;
+        lastParticleY = event.clientY;
+
+        cursorActive = true;
+    }
+});
+
+// HP: api hilang saat jari dilepas
+document.addEventListener("pointerup", (event) => {
+    if (event.pointerType === "touch") {
+        cursorActive = false;
+        particles = [];
+        mouse.x = -100;
+        mouse.y = -100;
+    }
+});
+
+document.addEventListener("pointercancel", (event) => {
+    if (event.pointerType === "touch") {
+        cursorActive = false;
+        particles = [];
+        mouse.x = -100;
+        mouse.y = -100;
+    }
+});
+
 
 // Membuat partikel api dan bara
 function createParticle(x, y, type = "fire") {
@@ -170,7 +223,7 @@ function drawParticle(p) {
         // Bara kecil yang menyala
         ctx.globalCompositeOperation = "lighter";
         ctx.fillStyle = "#0799fa";
-        ctx.shadowColor = "#chatff4500";
+        ctx.shadowColor = "#008cff";
         ctx.shadowBlur = 8;
 
         ctx.beginPath();
