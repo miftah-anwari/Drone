@@ -78,7 +78,7 @@ hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
-
+/*
 const canvas = document.getElementById("fireCanvas");
 const ctx = canvas.getContext("2d", { alpha: true });
 
@@ -411,3 +411,4 @@ function animate(time = 0) {
 }
 
 requestAnimationFrame(animate);
+*/
